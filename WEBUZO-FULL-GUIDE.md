@@ -55,11 +55,15 @@
 
 ## PART B — Git clone on Webuzo SSH
 
-Replace `YOUR_GITHUB_URL` with your repo after push:
+Replace `YOUR_GITHUB_URL` with:
+
+```
+https://github.com/sumon626000/ludopay.git
+```
 
 ```bash
 cd /home/monsterg
-git clone YOUR_GITHUB_URL ludopay-repo
+git clone https://github.com/sumon626000/ludopay.git ludopay-repo
 cd ludopay-repo
 chmod +x webuzo/*.sh
 ```
@@ -247,8 +251,8 @@ pm2 restart ludo-server
 
 ```bat
 cd c:\Users\sumon\Desktop\monster\ludopay
-git remote add origin https://github.com/YOUR_USER/ludopay.git
+git remote add origin https://github.com/sumon626000/ludopay.git
 git push -u origin master
 ```
 
-Then on Webuzo clone that URL.
+Repo: **https://github.com/sumon626000/ludopay**
