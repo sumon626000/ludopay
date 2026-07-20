@@ -12,6 +12,10 @@ MONGO_URI="mongodb://${MONGO_USER}:${MONGO_PASS}@127.0.0.1:27017/${MONGO_DB}?aut
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 DUMP_DIR="$PROJECT_ROOT/database-backup/webplustechludo"
+# Support nested export folder from zip extract
+if [ ! -f "$DUMP_DIR/admins.bson" ] && [ -d "$DUMP_DIR/webplustechludo" ]; then
+  DUMP_DIR="$DUMP_DIR/webplustechludo"
+fi
 
 echo "========== MongoDB import for Webuzo =========="
 echo "Database: $MONGO_DB"
