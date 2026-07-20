@@ -16,11 +16,13 @@ See `SETUP-LOCAL.md` and `README-START.txt`.
 
 ## Webuzo production deploy
 
-1. Push this repo to GitHub
-2. On Webuzo: `git clone` → follow **`WEBUZO-GIT-DEPLOY.md`**
-3. Import DB: `bash webuzo/import-database.sh`
+**Full guide:** [`WEBUZO-FULL-GUIDE.md`](WEBUZO-FULL-GUIDE.md)
 
-Database dump included in `database-backup/webplustechludo/`.
+1. Push this repo to GitHub
+2. On Webuzo SSH: `git clone YOUR_REPO ludopay-repo`
+3. Run: `bash webuzo/setup-all.sh`
+
+Database included: `database-backup/webplustechludo.zip`
 
 ## Project layout
 
