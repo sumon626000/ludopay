@@ -1,3 +1,12 @@
+# Large Firebase / build artifacts (install via Unity — not for git)
+LudoPayprojectFIle/Assets/Firebase/Plugins/**/*.bundle
+LudoPayprojectFIle/Assets/Firebase/Plugins/**/*.so
+LudoPayprojectFIle/Assets/Firebase/Plugins/**/*.dll
+LudoPayprojectFIle/Assets/Plugins/**/Firebase/*.a
+LudoPayprojectFIle/*.aab
+LudoPayprojectFIle/*.apk
+LudoPayprojectFIle/build_BackUpThisFolder_ButDontShipItWithYourGame/
+
 # Secrets / local env
 .env
 .env.local
