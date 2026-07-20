@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "566391111580",
+    "project_id": "ludo-pay-fbef6",
+    "storage_bucket": "ludo-pay-fbef6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566391111580:android:105396e95fa640210d9259",
+        "android_client_info": {
+          "package_name": "com.DV.LudoPay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566391111580-ma8npalu4sthjbj3knini7ruuvdhdklc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.DV.LudoPay",
+            "certificate_hash": "9ebafd77ea33fd956b1a8c01f8a18b491aa1350c"
+          }
+        },
+        {
+          "client_id": "566391111580-gpbr7jfdasudl3pq085j1shhe6i6d03l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBejPMow-mGpiHw5D1A5oNdLFJ2-iPU6bo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566391111580-g5sf5oqsrra41bu84eqs1eatlq6vb6m4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

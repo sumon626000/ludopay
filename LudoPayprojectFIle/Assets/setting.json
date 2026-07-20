@@ -1,0 +1,6 @@
+{
+    "music": true,
+    "sound": true,
+    "vibration": true,
+    "notification": false
+}

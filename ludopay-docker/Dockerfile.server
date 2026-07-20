@@ -1,0 +1,14 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Install deps first (cached layer). The actual source is bind-mounted at runtime.
+COPY package*.json ./
+RUN npm install --omit=dev || npm install
+
+# Source will be mounted via docker-compose volume; copy as fallback
+COPY . .
+
+EXPOSE 3000 16000
+
+CMD ["npm", "start"]

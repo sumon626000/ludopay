@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="com.DV.LudoPay" android:versionCode="1" android:versionName="1.0">
+  <application android:label="@string/app_name" android:icon="@drawable/app_icon" android:usesCleartextTraffic="false" android:extractNativeLibs="true">
+    <!-- AdMob: add real App ID via LudoPay → Apply Play Store Compliance, then ENABLE_ADMOB if using ads -->
+    <!-- GUEST_BUILD: block Firebase/Facebook auto-init ContentProviders merged from AARs -->
+    <provider android:name="com.google.firebase.provider.FirebaseInitProvider" android:authorities="com.DV.LudoPay.firebaseinitprovider" tools:node="remove" />
+    <provider android:name="com.facebook.internal.FacebookInitProvider" android:authorities="com.DV.LudoPay.FacebookInitProvider" tools:node="remove" />
+    <!-- GUEST_BUILD: drop Firebase messaging launcher; use standard Unity activity -->
+    <activity android:name="com.google.firebase.MessagingUnityPlayerActivity" tools:node="remove" />
+    <activity android:name="com.unity3d.player.UnityPlayerActivity" android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:exported="true" android:launchMode="singleTask" android:screenOrientation="portrait">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+        <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+      </intent-filter>
+      <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+    </activity>
+    <!-- GUEST_BUILD: strip Firebase/Facebook components merged from dependency AARs -->
+    <service android:name="com.google.firebase.messaging.MessageForwardingService" tools:node="remove" />
+    <service android:name="com.google.firebase.messaging.FirebaseMessagingService" tools:node="remove" />
+    <service android:name="com.google.firebase.messaging.cpp.ListenerService" tools:node="remove" />
+    <service android:name="com.google.firebase.messaging.cpp.RegistrationIntentService" tools:node="remove" />
+    <service android:name="com.google.firebase.components.ComponentDiscoveryService" tools:node="remove" />
+    <service android:name="com.google.android.gms.messaging.cpp.MessageForwardingService" tools:node="remove" />
+    <receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" tools:node="remove" />
+    <activity android:name="com.facebook.FacebookActivity" tools:node="remove" />
+    <activity android:name="com.facebook.CustomTabMainActivity" tools:node="remove" />
+    <activity android:name="com.facebook.CustomTabActivity" tools:node="remove" />
+    <receiver android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver" tools:node="remove" />
+    <receiver android:name="com.facebook.CampaignTrackingReceiver" tools:node="remove" />
+  </application>
+</manifest>

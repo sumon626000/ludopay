@@ -1,0 +1,49 @@
+# Secrets / local env
+.env
+.env.local
+.env.docker
+.env.backup
+ludopay-docker/.env
+WEBUZO-ENV-MONGO-LINES.txt
+
+# Laravel runtime
+laravel-admin/vendor/
+laravel-admin/node_modules/
+laravel-admin/storage/logs/*
+laravel-admin/storage/framework/cache/*
+laravel-admin/storage/framework/sessions/*
+laravel-admin/storage/framework/views/*
+!laravel-admin/storage/**/.gitignore
+
+# Node.js
+**/node_modules/
+ludopay-docker/server_node_modules/
+
+# Docker local data
+ludopay-docker/backup-import/
+mongo_data/
+
+# Unity generated
+LudoPayprojectFIle/Library/
+LudoPayprojectFIle/Temp/
+LudoPayprojectFIle/Obj/
+LudoPayprojectFIle/Logs/
+LudoPayprojectFIle/Build/
+LudoPayprojectFIle/Builds/
+LudoPayprojectFIle/UserSettings/
+LudoPayprojectFIle/MemoryCaptures/
+LudoPayprojectFIle/Recordings/
+
+# Temp / scratch
+tmp-db/
+tmp-server/
+*.b64
+CURRENT-NGROK-URL.txt
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo

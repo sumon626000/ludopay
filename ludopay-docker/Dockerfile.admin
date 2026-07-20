@@ -1,0 +1,23 @@
+FROM php:8.2-cli
+
+RUN apt-get update && apt-get install -y \
+    git \
+    unzip \
+    libzip-dev \
+    libssl-dev \
+    pkg-config \
+    && pecl install mongodb \
+    && docker-php-ext-enable mongodb \
+    && docker-php-ext-install zip \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+WORKDIR /var/www
+
+COPY admin-entrypoint.sh /usr/local/bin/admin-entrypoint.sh
+RUN chmod +x /usr/local/bin/admin-entrypoint.sh
+
+EXPOSE 8000
+
+ENTRYPOINT ["/usr/local/bin/admin-entrypoint.sh"]

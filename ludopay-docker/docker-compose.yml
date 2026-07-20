@@ -1,0 +1,61 @@
+services:
+  mongo:
+    image: mongo:6
+    container_name: ludo-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+      - ./mongo-init:/docker-entrypoint-initdb.d:ro
+
+  server:
+    build:
+      context: ./LudoPayServer
+      dockerfile: ../Dockerfile.server
+    container_name: ludo-server
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - MONGO_URL=${MONGO_DB_URI:-mongodb://mongo:27017/webplustechludo}
+      - PORT=3000
+    depends_on:
+      - mongo
+    volumes:
+      - ./LudoPayServer:/app
+      - server_node_modules:/app/node_modules
+
+  admin:
+    build:
+      context: .
+      dockerfile: Dockerfile.admin
+    container_name: ludo-admin
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    environment:
+      APP_NAME: Monster Game
+      APP_ENV: local
+      APP_DEBUG: "true"
+      APP_KEY: base64:70VyFnHQiB4ltuv3KQs2yNJ1y9sCzgLGa9Gjy9+if8A=
+      APP_URL: http://127.0.0.1:8000
+      DB_CONNECTION: mongodb
+      MONGO_DB_URI: ${MONGO_DB_URI:-mongodb://mongo:27017/webplustechludo}
+      MONGO_DB_DATABASE: ${MONGO_DB_DATABASE:-webplustechludo}
+      LOG_CHANNEL: stack
+      CACHE_DRIVER: file
+      SESSION_DRIVER: file
+    depends_on:
+      - mongo
+    volumes:
+      - ../laravel-admin:/var/www
+
+volumes:
+  mongo_data:
+  server_node_modules:

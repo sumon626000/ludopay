@@ -1,0 +1,2 @@
+# Replace with your real AdMob App ID from Google AdMob console when enabling ads.
+# Example: ca-app-pub-1234567890123456~0987654321

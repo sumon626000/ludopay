@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"e05431270c90439693438d5792f16ce8","collectionName":"nixbazar_ludopay_db","type":"collection"}
